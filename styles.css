@@ -1,0 +1,58 @@
+body {
+    background-image: url(img/lukasz-lada-LtWFFVi1RXQ-unsplash.jpg);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.top-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    background-color: #eee;
+    height: 80px;
+}
+
+#locationSearch {
+    width: 150px;
+    border: 1px solid black;
+    border-radius: 5px;
+
+    padding: 1px;
+}
+
+#submitBtn {
+    width: 50px;
+    height: 20px;
+
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.current {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    fill: 1;
+}
+
+.main-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    padding-top: 50px;
+}
+
+.main-section h2 {
+    font-size: xx-large;
+}
+
+.main-section p {
+    font-size: xx-large;
+}
