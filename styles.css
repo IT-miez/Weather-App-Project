@@ -1,5 +1,11 @@
 body {
+    min-height: 100vh;
     background-image: url(img/lukasz-lada-LtWFFVi1RXQ-unsplash.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    font-family: 'Roboto', sans-serif;
 }
 
 * {
@@ -44,6 +50,8 @@ body {
 .main-section {
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
     gap: 20px;
 
     padding-top: 50px;
@@ -55,4 +63,34 @@ body {
 
 .main-section p {
     font-size: xx-large;
+}
+
+
+
+.middle-section {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 800px;
+    flex-direction: row;
+    gap: 40px;
+}
+
+
+.page-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 100px;
+}
+
+.weather-container-daily {
+    color: lightgray;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 200px;
+
+    border-radius: 15px;
+    padding: 10px;
 }

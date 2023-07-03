@@ -5,6 +5,7 @@ const apiKey = "4ba874ba9a1e48569df105159230207"
 const searchText = document.getElementById("locationSearch")
 const findLocation = document.getElementById("submitBtn")
 const main = document.getElementById("mainSection")
+const middle = document.getElementById("middleSection")
 
 console.log('testi')
 
@@ -73,7 +74,28 @@ async function fetchWeatherData(location) {
             console.log(`Weather forecast for ${date}:`)
             let temperature = day.day.avgtemp_c
             console.log(`Temperature: ${temperature}°C`)
-            console.log(`Weather condition: ${day.day.condition.text}`)
+            let condition = day.day.condition.text
+            console.log(`Weather condition: ${condition}`)
+            let imgsrc = day.day.condition.icon
+
+            let newDiv = document.createElement("div")
+            newDiv.classList.add("weather-container-daily")
+            let newDate = document.createElement("p")
+            let newCondition = document.createElement("p")
+            let newImg = document.createElement("img")
+            let newTemp = document.createElement("p")
+
+            newCondition.textContent = condition
+            newImg.src = imgsrc
+            newTemp.textContent = temperature + " °C"
+            newDate.textContent = date
+
+            newDiv.appendChild(newDate)
+            newDiv.appendChild(newCondition)
+            newDiv.appendChild(newImg)
+            newDiv.appendChild(newTemp)
+
+            middle.appendChild(newDiv)
         }
 
 
@@ -81,3 +103,5 @@ async function fetchWeatherData(location) {
         console.error("Error: ", error)
     }
 }
+
+fetchWeatherData("Lohja")   

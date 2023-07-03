@@ -9,7 +9,7 @@ GitHub Pages site: https://it-miez.github.io/Weather-App-Project/
 ## Technologies used
 **HTML** </br>
 **CSS** (styling, background image, icon sizes, flex)</br>
-**JavaScript** (creation of elements, event-listeners)</br></br>
+**JavaScript** (creation of some elements, event-listeners for search and submit button)</br></br>
 
 
 ## What I learned
