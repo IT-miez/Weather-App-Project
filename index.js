@@ -68,9 +68,26 @@ async function fetchWeatherData(location) {
         }
         main.appendChild(currentDiv)
 
+
+
         // Forecast daily
+        let findDIv = document.getElementById("current2")
+        if (findDIv) {
+            middle.removeChild(findDIv)
+        }
+
+        const dailyDiv = document.createElement("div")
+        dailyDiv.setAttribute("id", "current2")
+        dailyDiv.classList.add("middle-section")
+
         for(let day of data.forecast.forecastday) {
-            let date = day.date
+            let givenDateConverted = formatDate(day.date)
+            let weekday = givenDateConverted[1]
+            givenDateConverted = givenDateConverted[0]
+
+            //let date = day.date
+            let date = givenDateConverted
+            
             console.log(`Weather forecast for ${date}:`)
             let temperature = day.day.avgtemp_c
             console.log(`Temperature: ${temperature}°C`)
@@ -80,23 +97,35 @@ async function fetchWeatherData(location) {
 
             let newDiv = document.createElement("div")
             newDiv.classList.add("weather-container-daily")
+            let dateDiv = document.createElement("div")
+            dateDiv.classList.add("dateDiv")
             let newDate = document.createElement("p")
+            let newWeekday = document.createElement("p")
             let newCondition = document.createElement("p")
+
+            let imgTempContainer = document.createElement("div")
+            imgTempContainer.classList.add("daily-container")
             let newImg = document.createElement("img")
             let newTemp = document.createElement("p")
 
             newCondition.textContent = condition
             newImg.src = imgsrc
             newTemp.textContent = temperature + " °C"
+            newWeekday.textContent = weekday
             newDate.textContent = date
 
-            newDiv.appendChild(newDate)
+            dateDiv.appendChild(newDate)
+            dateDiv.appendChild(newWeekday)
+            newDiv.appendChild(dateDiv)
             newDiv.appendChild(newCondition)
-            newDiv.appendChild(newImg)
-            newDiv.appendChild(newTemp)
+            imgTempContainer.appendChild(newImg)
+            imgTempContainer.appendChild(newTemp)
+            newDiv.appendChild(imgTempContainer)
 
-            middle.appendChild(newDiv)
+            dailyDiv.appendChild(newDiv)
         }
+
+        middle.appendChild(dailyDiv)
 
 
     } catch(error) {
@@ -104,4 +133,17 @@ async function fetchWeatherData(location) {
     }
 }
 
-fetchWeatherData("Lohja")   
+function formatDate(dateString) {
+    const date = new Date(dateString);
+    
+    // Format the date as DD.MM.YYYY
+    const formattedDate = date.toLocaleDateString('fi', { day: '2-digit', month: '2-digit', year: 'numeric' });
+    
+    // Get the weekday
+    const weekday = date.toLocaleDateString('en', { weekday: 'long' });
+  
+    let resultDate = [formattedDate, weekday]
+    return resultDate;
+  }
+
+fetchWeatherData("London")   

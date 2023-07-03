@@ -13,6 +13,8 @@ body {
     padding: 0;
 }
 
+
+
 .top-section {
     display: flex;
     flex-direction: row;
@@ -53,7 +55,7 @@ body {
     justify-content: space-around;
     align-items: center;
     gap: 20px;
-
+    color: white;
     padding-top: 50px;
 }
 
@@ -73,7 +75,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    width: 800px;
+    width: 1200px;
     flex-direction: row;
     gap: 40px;
 }
@@ -87,10 +89,27 @@ body {
 }
 
 .weather-container-daily {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
     color: lightgray;
     background-color: rgba(0, 0, 0, 0.5);
     width: 200px;
 
     border-radius: 15px;
     padding: 10px;
+}
+
+.daily-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}
+
+.dateDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
