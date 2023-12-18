@@ -1,6 +1,6 @@
-# The Odin Project -  Weather app
+# Weather app
 This project was made while doing The Odin Project. </br>
-The page is a simple weather app page.</br>
+In this page you can view weather forecast for various cities based on name search.</br>
 
 ## Live site
 GitHub Pages site: https://it-miez.github.io/Weather-App-Project/
@@ -13,5 +13,9 @@ GitHub Pages site: https://it-miez.github.io/Weather-App-Project/
 **JavaScript** (creation of some elements, event-listeners for search and submit button)</br></br>
 
 
-## What I learned
-I did a basic weather app webpage utilizing a public API for weather data. I refreshed async/await and promises, alongside fetch API.
+## What I learned 
+* External API using a api-key
+* async/await
+* promises
+* fetch
+* Document manipulation using DOM-Api
