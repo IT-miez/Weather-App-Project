@@ -4,6 +4,7 @@ The page is a simple weather app page.</br>
 
 ## Live site
 GitHub Pages site: https://it-miez.github.io/Weather-App-Project/
+![](https://github.com/IT-miez/Weather-App-Project/blob/main/weather-app-gif.gif)
 </br></br>
 
 ## Technologies used
